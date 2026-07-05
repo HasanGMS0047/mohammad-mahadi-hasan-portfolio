@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://mahadi-hasan.vercel.app/sitemap.xml",
+    sitemap: "https://mohammad-mahadi-hasan-portfolio.vercel.app/sitemap.xml",
   };
 }
