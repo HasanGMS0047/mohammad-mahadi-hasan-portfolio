@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-paper: #e7e8e2;
+  --color-ink: #16171a;
+  --color-ink-soft: rgba(22, 23, 26, 0.6);
+  --color-surface: #ffffff;
+  --color-surface-2: #dedfd8;
+  --color-rule: rgba(22, 23, 26, 0.16);
+  --color-red: #c81e2c;
+  --color-blue: #1b4b8c;
+  --color-yellow: #e3a91a;
+  --color-neon: #ff2d43;
+  --color-neon-soft: rgba(255, 45, 67, 0.35);
+}
+
+.dark {
+  --color-paper: #0b0b0d;
+  --color-ink: #f2f0ea;
+  --color-ink-soft: rgba(242, 240, 234, 0.62);
+  --color-surface: #151517;
+  --color-surface-2: #1e1e21;
+  --color-rule: rgba(242, 240, 234, 0.18);
+  --color-red: #ff3b4e;
+  --color-blue: #5081cf;
+  --color-yellow: #f0b429;
+  --color-neon: #ff3b4e;
+  --color-neon-soft: rgba(255, 59, 78, 0.45);
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-surface: var(--color-surface);
+  --color-surface-2: var(--color-surface-2);
+  --color-rule: var(--color-rule);
+  --color-red: var(--color-red);
+  --color-blue: var(--color-blue);
+  --color-yellow: var(--color-yellow);
+  --color-neon: var(--color-neon);
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-rise: rise 0.7s cubic-bezier(0.2, 0.9, 0.25, 1) forwards;
+  --animate-pop: pop 0.6s cubic-bezier(0.2, 0.9, 0.25, 1) forwards;
+  --animate-flicker: flicker 3.6s ease-in-out infinite;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pop {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes flicker {
+    0%, 92%, 100% { opacity: 1; }
+    94% { opacity: 0.75; }
+    96% { opacity: 1; }
+    97% { opacity: 0.85; }
+  }
+}
+
+* {
+  border-color: var(--color-rule);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: var(--color-red);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+  border: 2px solid var(--color-paper);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-red);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.panel {
+  background: var(--color-surface);
+  border: 2px solid var(--color-ink);
+}
+
+.stamp {
+  border: 1.5px solid var(--color-ink);
+  color: var(--color-ink);
+}
+
+.neon-text {
+  text-shadow: 0 0 12px var(--color-neon-soft), 0 0 28px var(--color-neon-soft);
+}
+
+.neon-ring {
+  box-shadow: 0 0 0 2px var(--color-neon), 0 0 18px var(--color-neon-soft);
+}
+
+.neon-glow {
+  box-shadow: 0 0 22px var(--color-neon-soft);
+}
