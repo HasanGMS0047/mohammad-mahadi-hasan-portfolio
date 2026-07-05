@@ -102,7 +102,7 @@ export const projects: Project[] = [
     image: "/images/projects/wastopia.svg",
     categories: ["Full-Stack", "Blockchain"],
     stack: ["Next.js", "Hyperledger Fabric", "Besu", "Smart Contracts", "IoT"],
-    highlight: "Best Emerging Team — Blockchain Category, UIU CSE FEST 2025",
+    highlight: "Team Se7en — Best Emerging Team, Blockchain Category (UIU CSE FEST 2025)",
     github: "https://github.com/HasanGMS0047/Project-Wastopia",
     demo: "https://project-wastopia.vercel.app",
   },
@@ -132,12 +132,12 @@ export const projects: Project[] = [
 export const activities: ActivityItem[] = [
   {
     organization: "UIU CSE FEST 2025",
-    role: "Hackathon Team — Project Wastopia",
+    role: "Team Se7en — Project Wastopia",
     period: "2025",
     location: "Dhaka, Bangladesh",
     points: [
       "Built a hybrid Hyperledger Fabric + Besu blockchain platform for transparent waste management in under hackathon time constraints.",
-      "Won \"Best Emerging Team – Blockchain Category\" among competing university teams.",
+      "Competed as part of Team Se7en and won \"Best Emerging Team – Blockchain Category\" among competing university teams.",
     ],
   },
   {

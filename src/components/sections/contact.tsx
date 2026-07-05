@@ -61,7 +61,7 @@ export function Contact() {
                 href={detail.href}
                 target={detail.href.startsWith("http") ? "_blank" : undefined}
                 rel={detail.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="panel flex items-center gap-4 p-5 transition-transform hover:-translate-y-1"
+                className="panel flex items-center gap-4 p-5 transition-[transform,box-shadow] duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[6px_6px_0_var(--color-ink)]"
               >
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center border-2 border-ink bg-ink text-paper">
                   <detail.icon size={18} />
