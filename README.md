@@ -4,6 +4,8 @@ Personal portfolio site for Mohammad Mahadi Hasan, a Computer Science & Engineer
 United International University (UIU), Dhaka. Built with a Bauhaus-inspired red/black/yellow
 design system, dark/light theming, and real project data.
 
+**Live:** https://mohammad-mahadi-hasan-portfolio.vercel.app
+
 ## Stack
 
 - Next.js (App Router) + TypeScript

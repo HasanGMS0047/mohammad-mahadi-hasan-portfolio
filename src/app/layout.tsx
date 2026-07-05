@@ -13,7 +13,7 @@ const archivo = Archivo({
   display: "swap",
 });
 
-const siteUrl = "https://mahadi-hasan.vercel.app";
+const siteUrl = "https://mohammad-mahadi-hasan-portfolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
