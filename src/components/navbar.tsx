@@ -57,7 +57,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle className="hidden sm:flex" />
           <Button href="#contact" size="md" className="hidden sm:inline-flex">
-            {siteConfig.name.split(" ")[0]}
+            {siteConfig.name.split(" ")[1]}
           </Button>
           <button
             type="button"

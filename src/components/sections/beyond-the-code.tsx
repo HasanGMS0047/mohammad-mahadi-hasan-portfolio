@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { FadeIn } from "@/components/ui/fade-in";
+import { Panel } from "@/components/ui/panel";
 import { beyondTheCode } from "@/lib/data";
 
 const blockColors = ["bg-red text-white", "bg-ink text-paper", "bg-yellow text-ink", "bg-blue text-white"];
@@ -18,7 +19,7 @@ export function BeyondTheCode() {
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {beyondTheCode.map((item, index) => (
             <FadeIn key={item.title} delay={index * 0.08}>
-              <div className="panel h-full p-6">
+              <Panel className="h-full p-6">
                 <span
                   className={`flex h-11 w-11 items-center justify-center border-2 border-ink ${blockColors[index % blockColors.length]}`}
                 >
@@ -28,7 +29,7 @@ export function BeyondTheCode() {
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm text-ink-soft text-pretty">{item.description}</p>
-              </div>
+              </Panel>
             </FadeIn>
           ))}
         </div>

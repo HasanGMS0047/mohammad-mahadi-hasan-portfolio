@@ -56,8 +56,9 @@ export function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
+                whileHover={{ x: -4, y: -4, transition: { duration: 0.15, ease: "linear" } }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="group panel flex flex-col overflow-hidden"
+                className="group panel flex flex-col overflow-hidden transition-shadow duration-150 hover:shadow-[6px_6px_0_var(--color-ink)]"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden border-b-2 border-ink">
                   <Image

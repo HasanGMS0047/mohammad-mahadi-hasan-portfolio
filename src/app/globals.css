@@ -114,6 +114,12 @@ body {
 .stamp {
   border: 1.5px solid var(--color-ink);
   color: var(--color-ink);
+  transition: background-color 0.15s linear, color 0.15s linear;
+}
+
+.stamp:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
 .neon-text {

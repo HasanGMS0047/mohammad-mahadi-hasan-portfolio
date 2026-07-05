@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { Cursor } from "@/components/cursor";
 import { LoadingScreen } from "@/components/loading-screen";
 import { siteConfig } from "@/lib/data";
 
@@ -64,16 +63,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={archivo.variable} suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col font-sans antialiased selection:bg-red-600 selection:text-white">
+      <body className="min-h-screen flex flex-col font-sans antialiased selection:bg-red selection:text-white">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[999] focus:border-2 focus:border-ink focus:bg-red-600 focus:px-5 focus:py-2.5 focus:text-white"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[999] focus:border-2 focus:border-ink focus:bg-red focus:px-5 focus:py-2.5 focus:text-white"
           >
             Skip to content
           </a>
           <LoadingScreen />
-          <Cursor />
           <Navbar />
           <main id="main-content" className="flex-1">
             {children}

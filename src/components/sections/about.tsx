@@ -36,7 +36,7 @@ export function About() {
           </FadeIn>
 
           <FadeIn direction="left">
-            <Panel hover={false} className="p-8">
+            <Panel className="p-8">
               <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-ink-soft">
                 My Journey
               </h4>
