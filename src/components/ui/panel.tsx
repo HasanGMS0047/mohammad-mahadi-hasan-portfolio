@@ -21,7 +21,8 @@ export function Panel({ children, className, hover = true }: PanelProps) {
       style={tilt.style}
       className={cn(
         "panel",
-        hover && "transition-shadow duration-150 hover:shadow-[6px_6px_0_var(--color-ink)]",
+        hover &&
+          "transition-shadow duration-150 hover:shadow-[0_0_0_2px_var(--color-red),0_0_32px_var(--color-neon-soft)]",
         className,
       )}
     >

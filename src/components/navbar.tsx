@@ -2,9 +2,10 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { navLinks, siteConfig } from "@/lib/data";
+import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { ThemeToggle } from "./theme-toggle";
@@ -37,9 +38,12 @@ export function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href="#home"
-          className="text-lg font-extrabold uppercase tracking-tight focus-visible:outline-none focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-red"
+          className="flex items-center gap-2.5 text-lg font-extrabold uppercase tracking-tight focus-visible:outline-none focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-red"
         >
-          Mahadi<span className="text-red">.</span>
+          <span className="relative h-8 w-8 shrink-0 overflow-hidden border-2 border-ink bg-ink">
+            <Image src="/assets/my-logo.png" alt="" fill className="logo-mark object-cover" />
+          </span>
+          Forest47<span className="text-red">.</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
@@ -57,7 +61,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle className="hidden sm:flex" />
           <Button href="#contact" size="md" className="hidden sm:inline-flex">
-            {siteConfig.name.split(" ")[1]}
+            Forest47
           </Button>
           <button
             type="button"

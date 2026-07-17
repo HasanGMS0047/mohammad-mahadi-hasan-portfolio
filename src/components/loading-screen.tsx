@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export function LoadingScreen() {
@@ -23,11 +24,9 @@ export function LoadingScreen() {
         >
           <div className="flex flex-col items-center gap-5">
             <div className="flex items-center gap-3">
-              <motion.span
-                className="h-4 w-4 bg-red"
-                animate={{ rotate: [0, 180, 180, 360] }}
-                transition={{ duration: 1.4, repeat: Infinity, ease: "linear" }}
-              />
+              <span className="relative h-9 w-9 shrink-0 overflow-hidden border-2 border-ink bg-ink">
+                <Image src="/assets/my-logo.png" alt="" fill className="logo-mark object-cover" />
+              </span>
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}

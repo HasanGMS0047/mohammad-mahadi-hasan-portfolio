@@ -104,7 +104,29 @@ export const projects: Project[] = [
     stack: ["Next.js", "Hyperledger Fabric", "Besu", "Smart Contracts", "IoT"],
     highlight: "Team Se7en — Best Emerging Team, Blockchain Category (UIU CSE FEST 2025)",
     github: "https://github.com/HasanGMS0047/Project-Wastopia",
-    demo: "https://project-wastopia.vercel.app",
+    demo: "https://project-wastopia-five.vercel.app",
+  },
+  {
+    id: "life-dashboard",
+    title: "Life Dashboard",
+    description:
+      "A personal life-tracking app for journaling, mood, habits, goals, and a memory gallery, with a replay view over your own history. Built on Next.js with Prisma over a Postgres/Supabase database and NextAuth for authentication.",
+    image: "/images/projects/life-dashboard.svg",
+    categories: ["Full-Stack"],
+    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "NextAuth"],
+    github: "https://github.com/HasanGMS0047/life-dashboard",
+    demo: "https://life-dashboard-eosin-one.vercel.app",
+  },
+  {
+    id: "algocanvas",
+    title: "AlgoCanvas",
+    description:
+      "A from-scratch algorithm visualizer covering 27 algorithms — sorting, searching, graphs, trees, and hashing — rendered on a real <canvas> with a \"Think Like the Algorithm\" predict mode and plain-English step explanations. Backed by 218 tests, with results cross-checked against independent implementations.",
+    image: "/images/projects/algocanvas.svg",
+    categories: ["Frontend"],
+    stack: ["React", "TypeScript", "Vite", "Canvas API", "Vitest"],
+    github: "https://github.com/HasanGMS0047/algocanvas",
+    demo: "https://algocanvas-eight.vercel.app",
   },
   {
     id: "uiunest",
@@ -188,7 +210,7 @@ export const beyondTheCode: BeyondItem[] = [
 ];
 
 export const stats: Stat[] = [
-  { label: "Projects Shipped", value: 3, suffix: "" },
+  { label: "Projects Shipped", value: 5, suffix: "" },
   { label: "Years Coding", value: 2, suffix: "+" },
   { label: "Hackathon Awards", value: 1, suffix: "" },
   { label: "Languages Learning", value: 3, suffix: "" },
