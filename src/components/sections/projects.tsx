@@ -27,7 +27,7 @@ function ProjectCard({ project }: { project: Project }) {
       onMouseMove={tilt.onMouseMove}
       onMouseLeave={tilt.onMouseLeave}
       style={tilt.style}
-      className="group panel flex flex-col overflow-hidden transition-shadow duration-150 hover:shadow-[0_0_0_2px_var(--color-red),0_0_32px_var(--color-neon-soft)]"
+      className="group panel flex flex-col overflow-hidden transition-shadow duration-150 hover:shadow-[6px_6px_0_var(--color-red)]"
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden border-b-2 border-ink">
         <Image
