@@ -1,6 +1,7 @@
 import {
   Blocks,
   BrainCircuit,
+  Code2,
   Database,
   Globe2,
   Languages,
@@ -28,9 +29,9 @@ export const siteConfig = {
   name: "Mohammad Mahadi Hasan",
   title: "CSE Student & Full-Stack Developer",
   tagline:
-    "Computer Science undergrad building full-stack platforms, exploring machine learning, and arguing my way through debate rounds along the way.",
+    "Computer Science undergrad building full-stack platforms and working my way into machine learning, one project at a time.",
   shortBio:
-    "I'm a Computer Science & Engineering student at United International University (UIU), Dhaka. I build full-stack web platforms — from a blockchain waste-tracking system to a student housing marketplace — and I'm currently working my way into machine learning. Outside of code, I compete in chess, used to argue as 2nd speaker on my college debate team, and I'm slowly picking up German, French, and Japanese.",
+    "I'm a Computer Science & Engineering student at United International University (UIU), Dhaka. I build full-stack web platforms — from a blockchain waste-tracking system to a student housing marketplace — and I'm currently working my way into machine learning. Day to day that means JavaScript, TypeScript, Python, and Java, plus whatever a project needs along the way.",
   location: "Dhaka, Bangladesh",
   email: "hasantheking007@gmail.com",
   university: "United International University (UIU)",
@@ -66,6 +67,11 @@ export const contactDetails = [
 ];
 
 export const skillCategories: SkillCategory[] = [
+  {
+    title: "Languages",
+    icon: Code2,
+    skills: ["JavaScript", "TypeScript", "Python", "Java"],
+  },
   {
     title: "Frontend",
     icon: Globe2,
@@ -162,16 +168,6 @@ export const activities: ActivityItem[] = [
       "Competed as part of Team Se7en and won \"Best Emerging Team – Blockchain Category\" among competing university teams.",
     ],
   },
-  {
-    organization: "College Debate Team",
-    role: "2nd Speaker",
-    period: "College",
-    location: "Bangladesh",
-    points: [
-      "Argued as 2nd speaker in competitive debate rounds, building structured rebuttals under time pressure.",
-      "Sharpened the same skills that carry directly into technical problem-solving: structuring an argument, thinking on my feet, and defending a position with evidence.",
-    ],
-  },
 ];
 
 export const education: EducationItem[] = [
@@ -213,15 +209,10 @@ export const stats: Stat[] = [
   { label: "Projects Shipped", value: 5, suffix: "" },
   { label: "Years Coding", value: 2, suffix: "+" },
   { label: "Hackathon Awards", value: 1, suffix: "" },
-  { label: "Languages Learning", value: 3, suffix: "" },
+  { label: "Public Repos", value: 7, suffix: "" },
 ];
 
 export const timeline: TimelineEntry[] = [
-  {
-    year: "College",
-    title: "2nd Speaker, Debate Team",
-    description: "Represented my college in competitive debate as 2nd speaker.",
-  },
   {
     year: "2024",
     title: "Started Building",
@@ -239,13 +230,4 @@ export const timeline: TimelineEntry[] = [
     description:
       "Studying CSE at UIU, building full-stack platforms, and exploring machine learning.",
   },
-];
-
-export const interests = [
-  "Machine Learning",
-  "Competitive Chess",
-  "Debate & Public Speaking",
-  "Learning German",
-  "Learning French",
-  "Learning Japanese",
 ];
