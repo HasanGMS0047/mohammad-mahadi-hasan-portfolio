@@ -64,12 +64,22 @@ Key shared primitives (`src/components/ui/`):
   loses to an explicit rule on the element itself. Do not reintroduce a
   mouse-tracking React component for this.
 - Loading screen (`src/components/loading-screen.tsx`) shows **his real logo**
-  (`public/assets/my-logo.png`, run through `.logo-mark` — a CSS `filter` duotone
-  pushing it toward red/black) next to the text **"FOREST47"**, not his real name —
-  intentional. The same logo + `.logo-mark` treatment is also in the navbar top-left
-  (`src/components/navbar.tsx`). The navbar's top-left brand and the top-right CTA
-  button both read **"Forest47"** (previously incorrectly showed "Mahadi" in both
-  spots — that was a copy bug, not intentional).
+  (`public/assets/my-logo.png`, 1254×1254 source, plenty of resolution up to a couple
+  hundred px — no need to ask for a higher-res version unless it's going somewhere
+  much bigger than the navbar/loading screen) run through `.logo-mark` — a CSS
+  `filter` duotone pushing it toward red/black — next to the text **"FOREST47"**, not
+  his real name — intentional. The same logo + `.logo-mark` treatment is also in the
+  navbar top-left (`src/components/navbar.tsx`). Both spots render it in a plain
+  `overflow-hidden rounded-full` container with **no border and no background box** —
+  an earlier version wrapped it in `border-2 border-ink bg-ink`, which showed as an
+  unwanted white outline in dark mode; he asked for it to look "seamless... like it's
+  a part of the site" instead, so it's now just the circular-cropped image floating
+  directly on the navbar/loading-screen background (the crop matches the artwork's
+  own circular emblem composition — this `rounded-full` is a deliberate exception to
+  the sharp-corners rule for this one brand asset, not a change to the design
+  system). Navbar logo is 40px, loading-screen logo is 64px. The navbar's top-left
+  brand and the top-right CTA button both read **"Forest47"** (previously incorrectly
+  showed "Mahadi" in both spots — that was a copy bug, not intentional).
 
 ## Content rules — important, don't violate these
 
