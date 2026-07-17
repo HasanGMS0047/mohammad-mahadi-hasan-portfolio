@@ -31,15 +31,19 @@ Key shared primitives (`src/components/ui/`):
   a real mouse-tracking 3D tilt **plus a slight translate toward the cursor**
   (see `src/lib/use-tilt.ts` — `TILT_RANGE`/`MOVE_RANGE`, spring deliberately slow:
   `stiffness: 110, damping: 22, mass: 1`, tuned that way on request so it feels
-  "slow/cool" rather than snappy). On hover it shows a **red glow**
-  (`shadow-[0_0_0_2px_var(--color-red),0_0_32px_var(--color-neon-soft)]`), not a hard
-  offset shadow — that hard white/ink offset shadow was the old look and was
-  explicitly replaced. Any new "block" component should reuse `Panel` or `useTilt`
-  directly — don't call `useTilt()` inside a `.map()` at the parent level (breaks
-  Rules of Hooks when list length changes, e.g. project filtering, or just as a lint
-  rule even when length is static); extract a child component instead (see
-  `ProjectCard` in `src/components/sections/projects.tsx` and `ContactTile` in
-  `src/components/sections/contact.tsx` for the pattern).
+  "slow/cool" rather than snappy). On hover it shows the **neo-brutalist hard offset
+  shadow** — `hover:shadow-[6px_6px_0_var(--color-red)]` — a flat, no-blur "pop" in
+  the site's red, not a soft/blurred glow and not an outline ring. This went through
+  two iterations: original was `var(--color-ink)` (white in dark mode) → briefly
+  changed to a blurred red glow + ring → explicitly reverted back to the hard-offset
+  style on request ("I didn't want you to remove the neo brutalism effect"), just
+  recolored to red. **Don't reintroduce a blur/glow here** — the hard, sharp offset
+  *is* the intended look, red is only the color change. Any new "block" component
+  should reuse `Panel` or `useTilt` directly — don't call `useTilt()` inside a
+  `.map()` at the parent level (breaks Rules of Hooks when list length changes, e.g.
+  project filtering, or just as a lint rule even when length is static); extract a
+  child component instead (see `ProjectCard` in `src/components/sections/projects.tsx`
+  and `ContactTile` in `src/components/sections/contact.tsx` for the pattern).
 - `SectionHeading` — masthead-style label + index number (e.g. "N° 03"). The index
   numbers are real and sequential across sections; keep them in order if sections are
   reordered/added/removed. The stat numbers in `stats.tsx` have **no glow effect**
@@ -47,11 +51,17 @@ Key shared primitives (`src/components/ui/`):
 - **Cursor** — there is **no JS cursor-follower component** (`cursor.tsx` and
   `use-fine-pointer.ts` were deleted on request — "I didn't tell you to add a cursor
   extension moving with the cursor"). The cursor itself is replaced via plain CSS in
-  `globals.css` under `@media (pointer: fine)`: a small red diamond-outline SVG
-  (base64 data URI) as the default `cursor`, swapping to a filled red diamond on
-  `a, button, [role="button"], input, textarea, select, summary`. If asked to change
-  the cursor look again, edit those two base64 `url(...)` values in `globals.css`
-  (or regenerate from a raw SVG + `base64 -w0`) — do not reintroduce a
+  `globals.css` under `@media (pointer: fine)`: **one** custom cursor (a small solid
+  red arrow/pointer shape, base64 SVG data URI) applied identically to `body` and to
+  `a, button, [role="button"], input, textarea, select, summary` — deliberately the
+  *same* image everywhere now, no separate hover shape. (An earlier version used a
+  red diamond that changed shape/rotation on hover; that was explicitly disliked and
+  replaced with this single plain arrow — don't reintroduce shape-shifting or a
+  diamond.) If asked to change the cursor look again, edit that one base64 `url(...)`
+  value in `globals.css` (regenerate from a raw SVG + `base64 -w0`), and remember the
+  selector list needs the *same* value repeated — `a`/`button` have a default UA
+  `cursor: pointer` that wins over anything only set on `body`, since inheritance
+  loses to an explicit rule on the element itself. Do not reintroduce a
   mouse-tracking React component for this.
 - Loading screen (`src/components/loading-screen.tsx`) shows **his real logo**
   (`public/assets/my-logo.png`, run through `.logo-mark` — a CSS `filter` duotone
@@ -157,3 +167,8 @@ inventing it.
    `src/lib/data.ts` with matching Bauhaus-style SVG thumbnails, updated the Wastopia
    demo URL to its current canonical deployment (`project-wastopia-five.vercel.app`),
    and bumped "Projects Shipped" from 3 to 5.
+9. He disliked the red-diamond cursor and the blurred red glow/outline hover effect
+   from step 7 — walked both back. Cursor is now one plain solid red arrow (no shape
+   change on hover). Hover shadow is back to the original hard `6px 6px 0` offset
+   (the neo-brutalist look), just recolored from ink/white to red instead of the
+   glow. See the `Panel`/Cursor bullets above — don't redo either of these.
