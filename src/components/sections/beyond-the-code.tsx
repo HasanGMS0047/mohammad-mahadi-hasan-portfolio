@@ -10,10 +10,10 @@ export function BeyondTheCode() {
     <section id="beyond" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="Beyond the Code"
+          eyebrow="Fun Facts"
           index="N° 06"
-          title="What I'm into outside of shipping code"
-          description="No client testimonials yet — here's what actually fills the rest of my time."
+          title="A few things about me, unrelated to code"
+          description="No client testimonials — just the stuff that fills the time when I'm not shipping code."
         />
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

@@ -86,7 +86,7 @@ export function Contact() {
           eyebrow="Contact"
           index="N° 07"
           title="Let's build something together"
-          description="Have a project, a hackathon team, or just want to talk chess? My inbox is open."
+          description="Have a project, a hackathon team, or an opportunity in mind? My inbox is open."
         />
 
         <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr]">

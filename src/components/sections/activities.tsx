@@ -12,7 +12,7 @@ export function Activities() {
           eyebrow="Activities & Leadership"
           index="N° 04"
           title="Outside the classroom"
-          description="As a student, this is where I've put in the work — a hackathon win and a debate podium, not job titles."
+          description="As a student, this is where I've put in the work — a hackathon win, not job titles yet."
         />
 
         <div className="relative mt-16">

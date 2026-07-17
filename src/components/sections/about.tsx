@@ -1,7 +1,7 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Panel } from "@/components/ui/panel";
-import { interests, siteConfig, timeline } from "@/lib/data";
+import { siteConfig, timeline } from "@/lib/data";
 
 export function About() {
   return (
@@ -20,19 +20,6 @@ export function About() {
               CSE student, building real things.
             </h3>
             <p className="mt-5 text-ink-soft leading-relaxed text-pretty">{siteConfig.shortBio}</p>
-
-            <div className="mt-8">
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-ink-soft">
-                Beyond the screen
-              </h4>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {interests.map((interest) => (
-                  <span key={interest} className="stamp px-4 py-2 text-xs font-bold uppercase tracking-widest">
-                    {interest}
-                  </span>
-                ))}
-              </div>
-            </div>
           </FadeIn>
 
           <FadeIn direction="left">
