@@ -139,12 +139,7 @@ body {
 }
 
 @media (pointer: fine) {
-  body {
-    cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNicgaGVpZ2h0PScyNicgdmlld0JveD0nMCAwIDI2IDI2Jz48cmVjdCB4PSc2JyB5PSc2JyB3aWR0aD0nMTQnIGhlaWdodD0nMTQnIGZpbGw9J25vbmUnIHN0cm9rZT0nI2ZmM2I0ZScgc3Ryb2tlLXdpZHRoPScyLjUnIHRyYW5zZm9ybT0ncm90YXRlKDQ1IDEzIDEzKScvPjwvc3ZnPg==")
-      13 13,
-      auto;
-  }
-
+  body,
   a,
   button,
   [role="button"],
@@ -152,8 +147,8 @@ body {
   textarea,
   select,
   summary {
-    cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNicgaGVpZ2h0PScyNicgdmlld0JveD0nMCAwIDI2IDI2Jz48cmVjdCB4PSc0JyB5PSc0JyB3aWR0aD0nMTgnIGhlaWdodD0nMTgnIGZpbGw9JyNmZjNiNGUnIHRyYW5zZm9ybT0ncm90YXRlKDQ1IDEzIDEzKScvPjwvc3ZnPg==")
-      13 13,
-      pointer;
+    cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cGF0aCBkPSJNNC4wMzcgNC42ODhhLjQ5NS40OTUgMCAwIDEgLjY1MS0uNjUxbDE2IDYuNWEuNS41IDAgMCAxLS4wNjMuOTQ3bC02LjEyNCAxLjU4YTIgMiAwIDAgMC0xLjQzOCAxLjQzNWwtMS41NzkgNi4xMjZhLjUuNSAwIDAgMS0uOTQ3LjA2M3oiIGZpbGw9IiNmZjNiNGUiIHN0cm9rZT0iIzE2MTcxYSIgc3Ryb2tlLXdpZHRoPSIxLjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=")
+      3 3,
+      auto;
   }
 }

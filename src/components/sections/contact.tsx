@@ -34,7 +34,7 @@ function ContactTile({
       onMouseMove={tilt.onMouseMove}
       onMouseLeave={tilt.onMouseLeave}
       style={tilt.style}
-      className="panel flex items-center gap-4 p-5 transition-shadow duration-150 hover:shadow-[0_0_0_2px_var(--color-red),0_0_32px_var(--color-neon-soft)]"
+      className="panel flex items-center gap-4 p-5 transition-shadow duration-150 hover:shadow-[6px_6px_0_var(--color-red)]"
     >
       <span className="flex h-12 w-12 shrink-0 items-center justify-center border-2 border-ink bg-ink text-paper">
         <Icon size={18} />
