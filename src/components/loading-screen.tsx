@@ -24,7 +24,7 @@ export function LoadingScreen() {
         >
           <div className="flex flex-col items-center gap-5">
             <div className="flex items-center gap-3">
-              <span className="relative h-9 w-9 shrink-0 overflow-hidden border-2 border-ink bg-ink">
+              <span className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full">
                 <Image src="/assets/my-logo.png" alt="" fill className="logo-mark object-cover" />
               </span>
               <motion.span
