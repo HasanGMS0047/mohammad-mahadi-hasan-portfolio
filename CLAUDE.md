@@ -118,14 +118,37 @@ Everything in `src/lib/data.ts` must be **real**, never fabricated:
     professional-showcase material. He explicitly chose to leave it out when asked
     (2026-07-17). Don't add it unless he asks directly.
 - Activities — real: UIU CSE FEST 2025 hackathon win with **Team Se7en** (blockchain
-  category), college debate team (2nd speaker).
+  category). The college debate team (2nd speaker) used to have its own entry here too,
+  but was removed — see the "Fun Facts is the only personal-interest section" bullet
+  below.
 - No client testimonials, no certifications grid, no blog — these were deliberately
   **removed**, not just left empty, because there was no real content for them.
-  "Beyond the Code" replaces Testimonials with honest personal-interest cards instead
-  of fabricated quotes.
+  "Fun Facts" (`src/components/sections/beyond-the-code.tsx`, section id `#beyond`,
+  formerly titled "Beyond the Code") replaces Testimonials with honest personal-interest
+  cards instead of fabricated quotes.
+- **Fun Facts is the *only* place chess, debate, and language-learning appear.** He
+  explicitly asked (2026-07-17) that this personal-interest content — competitive
+  chess, having been a college debate 2nd speaker, and learning German/French/Japanese
+  — live in exactly one section and nowhere else on the site. It had leaked into the
+  hero tagline, the About bio, an About "Beyond the screen" interest-stamp list (now
+  deleted along with the `interests` export it read from), a full Activities timeline
+  entry, an About "My Journey" timeline entry, a Stats tile ("Languages Learning"), and
+  the Contact section's heading copy ("...or just want to talk chess?"). All of those
+  were rewritten/removed to be purely professional; only the four Fun Facts cards
+  (`beyondTheCode` in `data.ts`) still mention this stuff. If new personal-interest
+  content is ever added, it goes in Fun Facts only — don't sprinkle it into the bio,
+  timeline, activities, or contact copy "for personality."
+- Skills (`skillCategories` in `data.ts`) has a **"Languages" category** (JavaScript,
+  TypeScript, Python, Java) added 2026-07-17 after checking his GitHub profile README
+  (`github.com/HasanGMS0047/HasanGMS0047`), which states he works in Python and Java
+  too, not just JS/TS — that wasn't reflected in Skills before. When re-verifying
+  content against GitHub, check that profile-repo README in addition to individual
+  project READMEs; it's the closest thing he has to a personal bio and is a legitimate
+  source for skills/interests, unlike inventing them.
 - Stats are real/derivable (e.g. "Projects Shipped" = 5, matching the live count in
-  `projects` array — keep these in sync if projects are added/removed), never invented
-  client counts or made-up metrics.
+  `projects` array — keep these in sync if projects are added/removed; "Public Repos"
+  = 7, matching `gh api users/HasanGMS0047 --jq .public_repos` — re-check and update if
+  he adds/removes repos), never invented client counts or made-up metrics.
 - Contact: `hasantheking007@gmail.com`, LinkedIn `mahadi-hasan-2aa0b5335`.
 
 If asked to add content you can't verify (a new job, a quote, a cert), ask rather than
@@ -217,3 +240,12 @@ inventing it.
     hover back on for the contact form panel, the one box that didn't animate before,
     per his request that literally every box animate on hover. Also removed a faint
     pale baseline line from three project thumbnail SVGs.
+11. He asked for the portfolio to "look professional" and for the personal-interest
+    material he'd given (chess, debate, language-learning) to live in exactly one
+    section instead of being scattered — see the "Fun Facts is the only
+    personal-interest section" bullet above for the full list of what got rewritten.
+    Renamed "Beyond the Code" to "Fun Facts". Re-checked his GitHub, including his
+    profile README (`HasanGMS0047/HasanGMS0047`) this time, not just project READMEs;
+    found he also codes in Python/Java and added a "Languages" Skills category for
+    that. Swapped the removed "Languages Learning" stat for a real GitHub metric
+    ("Public Repos": 7).
