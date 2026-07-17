@@ -27,23 +27,46 @@ Archivo via `next/font/google`.
 
 Key shared primitives (`src/components/ui/`):
 - `Button` — sharp, bordered, hover-inverts to red. No glow.
-- `Panel` — the "block" wrapper used everywhere (cards, timelines, contact tiles). Has
-  a real mouse-tracking 3D tilt **plus a slight translate toward the cursor**
-  (see `src/lib/use-tilt.ts` — `TILT_RANGE`/`MOVE_RANGE`, spring deliberately slow:
-  `stiffness: 110, damping: 22, mass: 1`, tuned that way on request so it feels
-  "slow/cool" rather than snappy). On hover it shows the **neo-brutalist hard offset
-  shadow** — `hover:shadow-[6px_6px_0_var(--color-red)]` — a flat, no-blur "pop" in
-  the site's red, not a soft/blurred glow and not an outline ring. This went through
-  two iterations: original was `var(--color-ink)` (white in dark mode) → briefly
-  changed to a blurred red glow + ring → explicitly reverted back to the hard-offset
-  style on request ("I didn't want you to remove the neo brutalism effect"), just
-  recolored to red. **Don't reintroduce a blur/glow here** — the hard, sharp offset
-  *is* the intended look, red is only the color change. Any new "block" component
-  should reuse `Panel` or `useTilt` directly — don't call `useTilt()` inside a
-  `.map()` at the parent level (breaks Rules of Hooks when list length changes, e.g.
-  project filtering, or just as a lint rule even when length is static); extract a
-  child component instead (see `ProjectCard` in `src/components/sections/projects.tsx`
-  and `ContactTile` in `src/components/sections/contact.tsx` for the pattern).
+- `Panel` — the "block" wrapper used everywhere (cards, timelines, contact tiles,
+  **including the contact form panel now** — it was the one Panel with `hover={false}`,
+  explicitly turned back on because he asked for literally every box to animate on
+  hover). Has a real mouse-tracking 3D tilt **plus a translate toward the cursor**
+  (see `src/lib/use-tilt.ts` — currently `TILT_RANGE = 7`, `MOVE_RANGE = 18`,
+  `SPRING = { stiffness: 90, damping: 18, mass: 1.3 }`; this has been tuned twice on
+  request, first for a "slow/cool" feel, then made bigger/heavier — if asked again,
+  adjust these three constants rather than the per-component motion values). On hover
+  it shows the **neo-brutalist hard offset shadow** —
+  `hover:shadow-[9px_9px_0_var(--color-red)]` — a flat, no-blur "pop" in the site's
+  red, not a soft/blurred glow and not an outline ring. This went through three
+  iterations: original was `var(--color-ink)` at `6px` (white in dark mode) → briefly
+  a blurred red glow + ring → reverted to hard-offset red at `6px` → offset bumped to
+  `9px` for a heavier pop. **Don't reintroduce a blur/glow here** — the hard, sharp
+  offset *is* the intended look. The `.panel` class's own **base border** (always
+  visible, not just on hover) was also `2px solid var(--color-ink)` (white in dark
+  mode) and is now `2px solid var(--color-red)` — same reasoning, thick border kept,
+  color changed. The internal divider lines inside `ProjectCard` (between thumbnail
+  and body, above the code/demo links) and inside the stats grid (`divide-*`) went
+  ink → red too, for the same reason — **there should be no white/ink-colored lines
+  or borders anywhere on a box, only red or the surface/paper background.** Any new
+  "block" component should reuse `Panel` or `useTilt` directly — don't call
+  `useTilt()` inside a `.map()` at the parent level (breaks Rules of Hooks when list
+  length changes, e.g. project filtering, or just as a lint rule even when length is
+  static); extract a child component instead (see `ProjectCard` in
+  `src/components/sections/projects.tsx` and `ContactTile` in
+  `src/components/sections/contact.tsx` for the pattern).
+- **No hover-to-white anywhere.** Several small "icon button" elements used the
+  convention `hover:bg-ink hover:text-paper`, which is white-bg/black-text in dark
+  mode — disliked and converted to `hover:bg-red hover:text-white` (+`hover:border-red`
+  where there's a border) everywhere it appeared: `.stamp` (skill/stack tag pills, in
+  `globals.css`), stats-grid cells (`stats.tsx` — text also swaps to white on hover so
+  the red-on-red number stays legible), footer social icons, the theme toggle, mobile
+  nav links, contact-section social icons, and the `Button` `secondary` variant. If you
+  add a new small interactive icon/pill, default its hover state to red/white, not
+  ink/paper. Separately, the project card's thumbnail hover overlay used `bg-ink/60` as
+  a darkening scrim, but `ink` is a *foreground* token that's white in dark mode, so it
+  was lightening the image instead of dimming it — fixed by using a literal `bg-black/60`
+  there instead of a theme token, since the intent was "always dark scrim," not
+  "theme-appropriate foreground."
 - `SectionHeading` — masthead-style label + index number (e.g. "N° 03"). The index
   numbers are real and sequential across sections; keep them in order if sections are
   reordered/added/removed. The stat numbers in `stats.tsx` have **no glow effect**
@@ -114,8 +137,11 @@ inventing it.
   generated thumbnails, one per real project — `wastopia.svg`, `life-dashboard.svg`,
   `algocanvas.svg`, `uiunest.svg`, `clearpath.svg`). Follow the existing style if
   adding more: 800×500 viewBox, `#16171A` background, shapes only in the palette
-  colors (`#1B4B8C` blue, `#E3A91A` yellow, `#C81E2C` red), a pale thin baseline near
-  the bottom, optional white-stroke node/line accent group.
+  colors (`#1B4B8C` blue, `#E3A91A` yellow, `#C81E2C` red), optional white-stroke
+  node/line accent group for a "network/graph" motif. **Don't add a pale baseline
+  line near the bottom** — three of the five thumbnails had one
+  (`stroke="#E7E8E2" opacity="0.35"`) and it was removed as part of the "no white
+  lines on boxes" cleanup.
 - `public/assets/` — general drop folder for logos/icons/PDFs, distinct from
   `public/images/`. Now contains `my-logo.png` (his real personal logo, supplied
   2026-07-17) — used in the navbar and loading screen via the `.logo-mark` CSS filter.
@@ -182,3 +208,12 @@ inventing it.
    change on hover). Hover shadow is back to the original hard `6px 6px 0` offset
    (the neo-brutalist look), just recolored from ink/white to red instead of the
    glow. See the `Panel`/Cursor bullets above — don't redo either of these.
+10. Swept the whole site for remaining white/ink-colored lines and hover states and
+    converted them all to red (see the `Panel`/"No hover-to-white" bullets above for
+    the full list: `.panel` base border, internal card/stats dividers, `.stamp`
+    hover, stats-cell hover, footer/theme-toggle/mobile-nav/Button-secondary hover,
+    and the project-thumbnail hover overlay). Made the hover tilt/translate heavier
+    (bigger range, heavier spring) and the offset shadow bigger (6px → 9px). Turned
+    hover back on for the contact form panel, the one box that didn't animate before,
+    per his request that literally every box animate on hover. Also removed a faint
+    pale baseline line from three project thumbnail SVGs.
