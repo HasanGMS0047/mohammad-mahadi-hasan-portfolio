@@ -6,17 +6,17 @@ export function Stats() {
   return (
     <section className="relative py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="panel grid grid-cols-2 divide-y-2 divide-ink sm:grid-cols-4 sm:divide-y-0 sm:divide-x-2">
+        <div className="panel grid grid-cols-2 divide-y-2 divide-red sm:grid-cols-4 sm:divide-y-0 sm:divide-x-2">
           {stats.map((stat, index) => (
             <FadeIn
               key={stat.label}
               delay={index * 0.1}
-              className="group cursor-default px-6 py-10 text-center transition-colors duration-150 hover:bg-ink"
+              className="group cursor-default px-6 py-10 text-center transition-colors duration-150 hover:bg-red"
             >
-              <p className="text-4xl font-extrabold text-red transition-colors duration-150 sm:text-5xl">
+              <p className="text-4xl font-extrabold text-red transition-all duration-150 group-hover:scale-110 group-hover:text-white sm:text-5xl">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="mt-2 text-xs font-bold uppercase tracking-widest text-ink-soft transition-colors duration-150 group-hover:text-paper">
+              <p className="mt-2 text-xs font-bold uppercase tracking-widest text-ink-soft transition-colors duration-150 group-hover:text-white">
                 {stat.label}
               </p>
             </FadeIn>

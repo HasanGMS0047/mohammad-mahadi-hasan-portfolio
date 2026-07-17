@@ -34,7 +34,7 @@ function ContactTile({
       onMouseMove={tilt.onMouseMove}
       onMouseLeave={tilt.onMouseLeave}
       style={tilt.style}
-      className="panel flex items-center gap-4 p-5 transition-shadow duration-150 hover:shadow-[6px_6px_0_var(--color-red)]"
+      className="panel flex items-center gap-4 p-5 transition-shadow duration-150 hover:shadow-[9px_9px_0_var(--color-red)]"
     >
       <span className="flex h-12 w-12 shrink-0 items-center justify-center border-2 border-ink bg-ink text-paper">
         <Icon size={18} />
@@ -109,7 +109,7 @@ export function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-11 w-11 items-center justify-center border-2 border-ink text-ink transition-colors hover:bg-ink hover:text-paper"
+                  className="flex h-11 w-11 items-center justify-center border-2 border-ink text-ink transition-colors hover:border-red hover:bg-red hover:text-white"
                 >
                   <social.icon size={17} />
                 </a>
@@ -118,7 +118,7 @@ export function Contact() {
           </FadeIn>
 
           <FadeIn direction="left">
-            <Panel hover={false} className="p-8">
+            <Panel className="p-8">
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <Field label="Name" name="name" type="text" required autoComplete="name" />
