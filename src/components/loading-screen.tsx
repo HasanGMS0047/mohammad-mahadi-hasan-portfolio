@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { siteConfig } from "@/lib/data";
 
 export function LoadingScreen() {
   const [loading, setLoading] = useState(true);
@@ -35,7 +34,7 @@ export function LoadingScreen() {
                 transition={{ duration: 0.4 }}
                 className="text-2xl font-extrabold uppercase tracking-tight text-ink"
               >
-                {siteConfig.name.split(" ")[0]}
+                Forest47
               </motion.span>
             </div>
             <div className="h-1.5 w-44 border-2 border-ink">

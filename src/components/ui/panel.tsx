@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { useTilt } from "@/lib/use-tilt";
 
 type PanelProps = {
   children: ReactNode;
@@ -11,13 +12,16 @@ type PanelProps = {
 };
 
 export function Panel({ children, className, hover = true }: PanelProps) {
+  const tilt = useTilt(hover);
+
   return (
     <motion.div
-      whileHover={hover ? { x: -4, y: -4 } : undefined}
-      transition={{ duration: 0.15, ease: "linear" }}
+      onMouseMove={tilt.onMouseMove}
+      onMouseLeave={tilt.onMouseLeave}
+      style={tilt.style}
       className={cn(
         "panel",
-        hover && "hover:shadow-[6px_6px_0_var(--color-ink)]",
+        hover && "transition-shadow duration-150 hover:shadow-[6px_6px_0_var(--color-ink)]",
         className,
       )}
     >

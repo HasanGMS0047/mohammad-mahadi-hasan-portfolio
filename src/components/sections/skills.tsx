@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { FadeIn } from "@/components/ui/fade-in";
+import { Panel } from "@/components/ui/panel";
 import { skillCategories } from "@/lib/data";
 
 const blockColors = ["bg-red text-white", "bg-ink text-paper", "bg-yellow text-ink", "bg-blue text-white"];
@@ -21,11 +19,7 @@ export function Skills() {
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, index) => (
             <FadeIn key={category.title} delay={(index % 3) * 0.08}>
-              <motion.div
-                whileHover={{ x: -4, y: -4 }}
-                transition={{ duration: 0.15, ease: "linear" }}
-                className="panel h-full p-6 hover:shadow-[6px_6px_0_var(--color-ink)]"
-              >
+              <Panel className="h-full p-6">
                 <div className="flex items-center gap-3">
                   <span
                     className={`flex h-11 w-11 items-center justify-center border-2 border-ink ${blockColors[index % blockColors.length]}`}
@@ -47,7 +41,7 @@ export function Skills() {
                     </span>
                   ))}
                 </div>
-              </motion.div>
+              </Panel>
             </FadeIn>
           ))}
         </div>
