@@ -40,7 +40,7 @@ export function Navbar() {
           href="#home"
           className="flex items-center gap-2.5 text-lg font-extrabold uppercase tracking-tight focus-visible:outline-none focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-red"
         >
-          <span className="relative h-8 w-8 shrink-0 overflow-hidden border-2 border-ink bg-ink">
+          <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full">
             <Image src="/assets/my-logo.png" alt="" fill className="logo-mark object-cover" />
           </span>
           Forest47<span className="text-red">.</span>
