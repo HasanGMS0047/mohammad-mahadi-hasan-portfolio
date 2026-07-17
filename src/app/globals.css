@@ -108,18 +108,19 @@ body {
 
 .panel {
   background: var(--color-surface);
-  border: 2px solid var(--color-ink);
+  border: 2px solid var(--color-red);
 }
 
 .stamp {
   border: 1.5px solid var(--color-ink);
   color: var(--color-ink);
-  transition: background-color 0.15s linear, color 0.15s linear;
+  transition: background-color 0.15s linear, border-color 0.15s linear, color 0.15s linear;
 }
 
 .stamp:hover {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--color-red);
+  border-color: var(--color-red);
+  color: #fff;
 }
 
 .neon-text {

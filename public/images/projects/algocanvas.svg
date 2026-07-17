@@ -18,5 +18,4 @@
     <line x1="620" y1="240" x2="720" y2="270"/>
   </g>
   <polygon points="620,340 700,340 660,420" fill="#E3A91A" opacity="0.85"/>
-  <line x1="0" y1="420" x2="800" y2="420" stroke="#E7E8E2" stroke-width="2" opacity="0.35"/>
 </svg>

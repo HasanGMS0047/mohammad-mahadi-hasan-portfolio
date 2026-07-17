@@ -1,9 +1,9 @@
 import { useMotionValue, useSpring } from "framer-motion";
 import type { MouseEvent } from "react";
 
-const TILT_RANGE = 4;
-const MOVE_RANGE = 10;
-const SPRING = { stiffness: 110, damping: 22, mass: 1 };
+const TILT_RANGE = 7;
+const MOVE_RANGE = 18;
+const SPRING = { stiffness: 90, damping: 18, mass: 1.3 };
 
 export function useTilt(enabled = true) {
   const rotateX = useMotionValue(0);

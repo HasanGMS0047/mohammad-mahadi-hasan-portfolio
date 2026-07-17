@@ -90,7 +90,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="border-b-2 border-ink px-6 py-4 text-sm font-bold uppercase tracking-widest text-ink transition-colors hover:bg-ink hover:text-paper"
+                  className="border-b-2 border-ink px-6 py-4 text-sm font-bold uppercase tracking-widest text-ink transition-colors hover:bg-red hover:text-white"
                 >
                   {link.label}
                 </Link>

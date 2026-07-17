@@ -27,9 +27,9 @@ function ProjectCard({ project }: { project: Project }) {
       onMouseMove={tilt.onMouseMove}
       onMouseLeave={tilt.onMouseLeave}
       style={tilt.style}
-      className="group panel flex flex-col overflow-hidden transition-shadow duration-150 hover:shadow-[6px_6px_0_var(--color-red)]"
+      className="group panel flex flex-col overflow-hidden transition-shadow duration-150 hover:shadow-[9px_9px_0_var(--color-red)]"
     >
-      <div className="relative aspect-[16/10] w-full overflow-hidden border-b-2 border-ink">
+      <div className="relative aspect-[16/10] w-full overflow-hidden border-b-2 border-red">
         <Image
           src={project.image}
           alt={`${project.title} thumbnail`}
@@ -38,7 +38,7 @@ function ProjectCard({ project }: { project: Project }) {
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 flex items-center justify-center gap-3 bg-ink/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <div className="absolute inset-0 flex items-center justify-center gap-3 bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           {project.github ? (
             <a
               href={project.github}
@@ -83,7 +83,7 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <div className="mt-5 flex gap-4 border-t-2 border-ink pt-4">
+        <div className="mt-5 flex gap-4 border-t-2 border-red pt-4">
           {project.github ? (
             <a
               href={project.github}

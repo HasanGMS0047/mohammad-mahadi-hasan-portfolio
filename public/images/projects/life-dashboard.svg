@@ -19,5 +19,4 @@
   <circle cx="540" cy="300" r="8" fill="#1B4B8C"/>
   <circle cx="610" cy="340" r="8" fill="#1B4B8C"/>
   <circle cx="690" cy="260" r="8" fill="#1B4B8C"/>
-  <line x1="0" y1="420" x2="800" y2="420" stroke="#E7E8E2" stroke-width="2" opacity="0.35"/>
 </svg>
