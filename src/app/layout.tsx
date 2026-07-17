@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { Cursor } from "@/components/cursor";
 import { LoadingScreen } from "@/components/loading-screen";
 import { siteConfig } from "@/lib/data";
 
@@ -72,6 +73,7 @@ export default function RootLayout({
             Skip to content
           </a>
           <LoadingScreen />
+          <Cursor />
           <Navbar />
           <main id="main-content" className="flex-1">
             {children}
