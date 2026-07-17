@@ -133,3 +133,27 @@ body {
 .neon-glow {
   box-shadow: 0 0 22px var(--color-neon-soft);
 }
+
+.logo-mark {
+  filter: grayscale(1) contrast(1.15) sepia(1) hue-rotate(315deg) saturate(5) brightness(0.95);
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNicgaGVpZ2h0PScyNicgdmlld0JveD0nMCAwIDI2IDI2Jz48cmVjdCB4PSc2JyB5PSc2JyB3aWR0aD0nMTQnIGhlaWdodD0nMTQnIGZpbGw9J25vbmUnIHN0cm9rZT0nI2ZmM2I0ZScgc3Ryb2tlLXdpZHRoPScyLjUnIHRyYW5zZm9ybT0ncm90YXRlKDQ1IDEzIDEzKScvPjwvc3ZnPg==")
+      13 13,
+      auto;
+  }
+
+  a,
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select,
+  summary {
+    cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNicgaGVpZ2h0PScyNicgdmlld0JveD0nMCAwIDI2IDI2Jz48cmVjdCB4PSc0JyB5PSc0JyB3aWR0aD0nMTgnIGhlaWdodD0nMTgnIGZpbGw9JyNmZjNiNGUnIHRyYW5zZm9ybT0ncm90YXRlKDQ1IDEzIDEzKScvPjwvc3ZnPg==")
+      13 13,
+      pointer;
+  }
+}

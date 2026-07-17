@@ -27,7 +27,7 @@ function ProjectCard({ project }: { project: Project }) {
       onMouseMove={tilt.onMouseMove}
       onMouseLeave={tilt.onMouseLeave}
       style={tilt.style}
-      className="group panel flex flex-col overflow-hidden transition-shadow duration-150 hover:shadow-[6px_6px_0_var(--color-ink)]"
+      className="group panel flex flex-col overflow-hidden transition-shadow duration-150 hover:shadow-[0_0_0_2px_var(--color-red),0_0_32px_var(--color-neon-soft)]"
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden border-b-2 border-ink">
         <Image
@@ -125,7 +125,7 @@ export function Projects() {
           eyebrow="Featured Projects"
           index="N° 03"
           title="A few things I've built"
-          description="Real, shipped projects — a hackathon-winning blockchain platform, a student housing marketplace, and a university clearance system."
+          description="Real, shipped projects — a hackathon-winning blockchain platform, a from-scratch algorithm visualizer, and a handful of full-stack tools in between."
         />
 
         <div className="mt-10 flex flex-wrap justify-center gap-2">

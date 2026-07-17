@@ -13,7 +13,7 @@ export function Stats() {
               delay={index * 0.1}
               className="group cursor-default px-6 py-10 text-center transition-colors duration-150 hover:bg-ink"
             >
-              <p className="neon-text text-4xl font-extrabold text-red transition-colors duration-150 sm:text-5xl">
+              <p className="text-4xl font-extrabold text-red transition-colors duration-150 sm:text-5xl">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </p>
               <p className="mt-2 text-xs font-bold uppercase tracking-widest text-ink-soft transition-colors duration-150 group-hover:text-paper">

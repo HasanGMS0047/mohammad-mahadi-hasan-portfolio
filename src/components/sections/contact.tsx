@@ -7,9 +7,45 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Panel } from "@/components/ui/panel";
 import { Button } from "@/components/ui/button";
+import { useTilt } from "@/lib/use-tilt";
 import { contactDetails, socialLinks } from "@/lib/data";
+import type { IconComponent } from "@/lib/types";
 
 type Status = "idle" | "loading" | "success" | "error";
+
+function ContactTile({
+  label,
+  value,
+  href,
+  icon: Icon,
+}: {
+  label: string;
+  value: string;
+  href: string;
+  icon: IconComponent;
+}) {
+  const tilt = useTilt();
+
+  return (
+    <motion.a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+      onMouseMove={tilt.onMouseMove}
+      onMouseLeave={tilt.onMouseLeave}
+      style={tilt.style}
+      className="panel flex items-center gap-4 p-5 transition-shadow duration-150 hover:shadow-[0_0_0_2px_var(--color-red),0_0_32px_var(--color-neon-soft)]"
+    >
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center border-2 border-ink bg-ink text-paper">
+        <Icon size={18} />
+      </span>
+      <div>
+        <p className="text-xs font-bold uppercase tracking-widest text-ink-soft">{label}</p>
+        <p className="font-bold">{value}</p>
+      </div>
+    </motion.a>
+  );
+}
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
@@ -56,23 +92,13 @@ export function Contact() {
         <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <FadeIn direction="right" className="space-y-6">
             {contactDetails.map((detail) => (
-              <a
+              <ContactTile
                 key={detail.label}
+                label={detail.label}
+                value={detail.value}
                 href={detail.href}
-                target={detail.href.startsWith("http") ? "_blank" : undefined}
-                rel={detail.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="panel flex items-center gap-4 p-5 transition-[transform,box-shadow] duration-150 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[6px_6px_0_var(--color-ink)]"
-              >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center border-2 border-ink bg-ink text-paper">
-                  <detail.icon size={18} />
-                </span>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-ink-soft">
-                    {detail.label}
-                  </p>
-                  <p className="font-bold">{detail.value}</p>
-                </div>
-              </a>
+                icon={detail.icon}
+              />
             ))}
 
             <div className="flex gap-3 pt-2">
