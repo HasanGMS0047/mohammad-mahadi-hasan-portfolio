@@ -13,6 +13,11 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    // plain <img> elements with hand-written srcset
+    files: ["src/app/page.tsx"],
+    rules: { "@next/next/no-img-element": "off" },
+  },
 ]);
 
 export default eslintConfig;

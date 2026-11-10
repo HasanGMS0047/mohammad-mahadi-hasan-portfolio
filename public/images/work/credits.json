@@ -1,0 +1,35 @@
+{
+ "note": "Credits for the photographs in this folder: photos.mjs credits prints the footer block for the ones the pages use.",
+ "photos": [
+  {
+   "file": "photo-f58915687.webp",
+   "files": [
+    "photo-f58915687-500.webp",
+    "photo-f58915687-960.webp",
+    "photo-f58915687.webp"
+   ],
+   "id": "f58915687",
+   "alt": "Vintage chess pieces (Unsplash)",
+   "by": "Lou Levit loulevit",
+   "licence": "CC0",
+   "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://commons.wikimedia.org/wiki/File:Vintage_chess_pieces_(Unsplash).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f147765079.webp",
+   "files": [
+    "photo-f147765079-500.webp",
+    "photo-f147765079-960.webp",
+    "photo-f147765079.webp"
+   ],
+   "id": "f147765079",
+   "alt": "Chess game Staunton No. 6 perfil view 8",
+   "by": "Wilfredor",
+   "licence": "CC0",
+   "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "page": "https://commons.wikimedia.org/wiki/File:Chess_game_Staunton_No._6_perfil_view_8.jpg",
+   "source": "Wikimedia Commons"
+  }
+ ]
+}

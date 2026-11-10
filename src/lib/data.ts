@@ -1,233 +1,120 @@
-import {
-  Blocks,
-  BrainCircuit,
-  Code2,
-  Database,
-  Globe2,
-  Languages,
-  Mail,
-  MapPin,
-  Mic2,
-  ServerCog,
-  Swords,
-  Wrench,
-} from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/icons/brand-icons";
-import type {
-  ActivityItem,
-  BeyondItem,
-  EducationItem,
-  NavLink,
-  Project,
-  SkillCategory,
-  SocialLink,
-  Stat,
-  TimelineEntry,
-} from "./types";
+// Everything here is real and verified. Never invent
+// projects, figures, quotes or roles: ask instead.
 
-export const siteConfig = {
+export const site = {
   name: "Mohammad Mahadi Hasan",
-  title: "CSE Student & Full-Stack Developer",
-  tagline:
-    "Computer Science undergrad building full-stack platforms and working my way into machine learning, one project at a time.",
-  shortBio:
-    "I'm a Computer Science & Engineering student at United International University (UIU), Dhaka. I build full-stack web platforms — from a blockchain waste-tracking system to a student housing marketplace — and I'm currently working my way into machine learning. Day to day that means JavaScript, TypeScript, Python, and Java, plus whatever a project needs along the way.",
-  location: "Dhaka, Bangladesh",
+  short: "Mahadi",
+  brand: "Forest47",
+  url: "https://mohammad-mahadi-hasan-portfolio.vercel.app",
   email: "hasantheking007@gmail.com",
-  university: "United International University (UIU)",
+  github: "https://github.com/HasanGMS0047",
+  linkedin: "https://www.linkedin.com/in/mahadi-hasan-2aa0b5335",
+  title: "Mohammad Mahadi Hasan: CSE student at UIU, Dhaka",
+  description:
+    "CSE student at United International University, learning by building. Five class, hackathon and personal projects, four of them live.",
 };
 
-export const navLinks: NavLink[] = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Activities", href: "#activities" },
-  { label: "Contact", href: "#contact" },
-];
+export type Project = {
+  id: string;
+  title: string;
+  line: string; // card title: a verb and an object
+  body: string; // one or two sentences, with real details only
+  image?: string; // live-site screenshot, without size suffix
+  alt?: string;
+  github: string;
+  demo?: string;
+  stack: string[];
+};
 
-export const socialLinks: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/HasanGMS0047", icon: GithubIcon },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/mahadi-hasan-2aa0b5335",
-    icon: LinkedinIcon,
-  },
-  { label: "Email", href: "mailto:hasantheking007@gmail.com", icon: Mail },
-];
-
-export const contactDetails = [
-  { label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}`, icon: Mail },
-  {
-    label: "LinkedIn",
-    value: "mahadi-hasan-2aa0b5335",
-    href: "https://www.linkedin.com/in/mahadi-hasan-2aa0b5335",
-    icon: LinkedinIcon,
-  },
-  { label: "Location", value: siteConfig.location, href: "#contact", icon: MapPin },
-];
-
-export const skillCategories: SkillCategory[] = [
-  {
-    title: "Languages",
-    icon: Code2,
-    skills: ["JavaScript", "TypeScript", "Python", "Java"],
-  },
-  {
-    title: "Frontend",
-    icon: Globe2,
-    skills: ["Next.js", "React", "JavaScript", "HTML & CSS", "Tailwind CSS"],
-  },
-  {
-    title: "Backend",
-    icon: ServerCog,
-    skills: ["PHP", "Node.js", "RESTful APIs", "MySQL"],
-  },
-  {
-    title: "Databases",
-    icon: Database,
-    skills: ["MySQL", "Supabase (PostgreSQL)"],
-  },
-  {
-    title: "Blockchain & IoT",
-    icon: Blocks,
-    skills: ["Hyperledger Fabric", "Besu", "Smart Contracts", "IoT Systems"],
-  },
-  {
-    title: "Tools & Platforms",
-    icon: Wrench,
-    skills: ["Git & GitHub", "Vercel", "VS Code", "npm"],
-  },
-];
-
+// Order is fixed: Wastopia, Life Dashboard, AlgoCanvas, Nestly, ClearPath.
 export const projects: Project[] = [
   {
     id: "wastopia",
+    stack: ["Next.js","Hyperledger Fabric","Besu","Smart contracts","IoT"],
     title: "Wastopia",
-    description:
-      "A blockchain and IoT platform that tracks organic, recyclable, and hazardous waste end-to-end, using SmartBin devices and a WastoCoin incentive token to keep disposal transparent and fraud-proof.",
-    image: "/images/projects/wastopia.svg",
-    categories: ["Full-Stack", "Blockchain"],
-    stack: ["Next.js", "Hyperledger Fabric", "Besu", "Smart Contracts", "IoT"],
-    highlight: "Team Se7en — Best Emerging Team, Blockchain Category (UIU CSE FEST 2025)",
+    line: "Hackathon project: tracking waste on a blockchain",
+    body: "Built with Team Se7en at UIU CSE FEST 2025. Smart bins log waste on Hyperledger Fabric and Besu, and a token rewards people for disposing of it properly.",
+    image: "/images/work/wastopia",
+    alt: "The Wastopia project page: an overview of the blockchain waste platform on a dark green ground",
     github: "https://github.com/HasanGMS0047/Project-Wastopia",
     demo: "https://project-wastopia-five.vercel.app",
   },
   {
     id: "life-dashboard",
+    stack: ["Next.js","TypeScript","Prisma","PostgreSQL","NextAuth"],
     title: "Life Dashboard",
-    description:
-      "A personal life-tracking app for journaling, mood, habits, goals, and a memory gallery, with a replay view over your own history. Built on Next.js with Prisma over a Postgres/Supabase database and NextAuth for authentication.",
-    image: "/images/projects/life-dashboard.svg",
-    categories: ["Full-Stack"],
-    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "NextAuth"],
+    line: "Personal project: journal, moods, habits and goals",
+    body: "A personal app for journaling, tracking mood and habits, setting goals and saving memories, made with Next.js, Prisma and PostgreSQL.",
+    image: "/images/work/life-dashboard",
+    alt: "The Life Dashboard start screen: a serif headline over an illustrated window with books and a lamp",
     github: "https://github.com/HasanGMS0047/life-dashboard",
     demo: "https://life-dashboard-eosin-one.vercel.app",
   },
   {
     id: "algocanvas",
+    stack: ["React","TypeScript","Vite","Canvas API","Vitest"],
     title: "AlgoCanvas",
-    description:
-      "A from-scratch algorithm visualizer covering 27 algorithms — sorting, searching, graphs, trees, and hashing — rendered on a real <canvas> with a \"Think Like the Algorithm\" predict mode and plain-English step explanations. Backed by 218 tests, with results cross-checked against independent implementations.",
-    image: "/images/projects/algocanvas.svg",
-    categories: ["Frontend"],
-    stack: ["React", "TypeScript", "Vite", "Canvas API", "Vitest"],
+    line: "Learning project: 27 algorithms, step by step",
+    body: "Made to understand algorithms better. Each step comes with a plain-English explanation, and a guess-the-next-step mode tests what you picked up.",
+    image: "/images/work/algocanvas",
+    alt: "AlgoCanvas running bubble sort: ten blue bars on a dark canvas with step controls below",
     github: "https://github.com/HasanGMS0047/algocanvas",
     demo: "https://algocanvas-eight.vercel.app",
   },
   {
-    id: "uiunest",
-    title: "UIUNest",
-    description:
-      "A rental marketplace built for UIU students, with fully transparent cost breakdowns, 8-dimension flatmate compatibility matching, a secondary marketplace for used items, and NID-verified landlords.",
-    image: "/images/projects/uiunest.svg",
-    categories: ["Full-Stack", "Frontend"],
-    stack: ["React", "Supabase", "JavaScript"],
-    github: "https://github.com/HasanGMS0047/uiu-nest-core",
-    demo: "https://uiu-nest-core.vercel.app",
+    id: "nestly",
+    stack: ["React","Supabase","JavaScript"],
+    title: "Nestly",
+    line: "Personal project: student housing in Dhaka",
+    body: "Verified shared housing near private university campuses, with the full cost shown, flatmate matching and a place to buy and sell second-hand household items.",
+    image: "/images/work/nestly",
+    alt: "The Nestly home page: a search for flats in Dhaka by zone, room type and budget",
+    github: "https://github.com/HasanGMS0047/nestly-core",
+    demo: "https://nestly-core.vercel.app",
   },
   {
     id: "clearpath",
+    stack: ["PHP","MySQL","JavaScript"],
     title: "ClearPath",
-    description:
-      "A digital university clearance system that replaces paper forms with role-based Student, Department Admin, and Master Admin portals — complete with live review queues and automatic certificate generation.",
-    image: "/images/projects/clearpath.svg",
-    categories: ["Full-Stack", "Backend"],
-    stack: ["PHP", "MySQL", "JavaScript"],
+    line: "University project: clearance, online",
+    body: "A university project that moves student clearance online, from request to approval to certificate, in PHP and MySQL.",
     github: "https://github.com/HasanGMS0047/ClearPath",
   },
 ];
 
-export const activities: ActivityItem[] = [
-  {
-    organization: "UIU CSE FEST 2025",
-    role: "Team Se7en — Project Wastopia",
-    period: "2025",
-    location: "Dhaka, Bangladesh",
-    points: [
-      "Built a hybrid Hyperledger Fabric + Besu blockchain platform for transparent waste management in under hackathon time constraints.",
-      "Competed as part of Team Se7en and won \"Best Emerging Team – Blockchain Category\" among competing university teams.",
-    ],
-  },
+export type Tool = { name: string; use: string; icon: string; w: number; h: number; shape?: string };
+
+// the skills mosaic: four languages, then the tools by job (all real, all used in the projects above).
+// Twelve cells: a 3 x 4 mosaic beside the AlgoCanvas test run.
+export const tools: Tool[] = [
+  { name: "JavaScript", use: "Language", icon: "javascript.svg", w: 40, h: 40 },
+  { name: "TypeScript", use: "Language", icon: "typescript.svg", w: 40, h: 40 },
+  { name: "Python", use: "Language", icon: "python.svg", w: 40, h: 40 },
+  { name: "Java", use: "Language", icon: "java.svg", w: 30, h: 40, shape: "ic-tall" },
+  { name: "Next.js", use: "Life Dashboard", icon: "nextjs.svg", w: 40, h: 40 },
+  { name: "React", use: "AlgoCanvas, Nestly", icon: "react.svg", w: 40, h: 36 },
+  { name: "Node.js", use: "REST APIs", icon: "nodejs.svg", w: 35, h: 40 },
+  { name: "PHP", use: "ClearPath", icon: "php.svg", w: 40, h: 21, shape: "ic-wide" },
+  { name: "Prisma", use: "Life Dashboard", icon: "prisma.svg", w: 33, h: 40, shape: "ic-ink" },
+  { name: "MySQL", use: "ClearPath", icon: "mysql.svg", w: 40, h: 39 },
+  { name: "PostgreSQL", use: "Life Dashboard", icon: "postgres.svg", w: 39, h: 40 },
+  { name: "Supabase", use: "Nestly", icon: "supabase.svg", w: 39, h: 40 },
 ];
 
-export const education: EducationItem[] = [
-  {
-    school: "United International University (UIU)",
-    degree: "B.Sc. in Computer Science & Engineering",
-    period: "Currently Enrolled",
-    description:
-      "Studying CSE with a focus on software engineering and web development, while independently exploring machine learning outside of coursework.",
-  },
-];
+export const uiu = {
+  lead: "I'm in the 3rd year (7th trimester) of a BSc in Computer Science and Engineering at United International University. Since September 2026 I've also been a logistics intern at Eventors BD, helping with event planning, coordination and getting things ready. Right now I'm learning the basics of machine learning and getting more comfortable with programming by building small projects.",
+  rows: [
+    { name: "BSc in Computer Science and Engineering, UIU", value: "2024 to 2028 (expected)" },
+    { name: "Logistics Intern, Eventors BD", value: "Sep 2026 to present" },
+    { name: "Best Emerging Team, Blockchain, UIU CSE FEST 2025", value: "Jan 2025, with Team Se7en" },
+    { name: "HSC (Science), Sena Public School and College", value: "2023" },
+  ],
+};
 
-export const beyondTheCode: BeyondItem[] = [
-  {
-    icon: BrainCircuit,
-    title: "Learning Machine Learning",
-    description:
-      "Currently working through the fundamentals of ML — model training, data pipelines, and where it fits into real products.",
-  },
-  {
-    icon: Swords,
-    title: "Competitive Chess",
-    description: "I play competitive chess — thinking a few moves ahead on the board and in code.",
-  },
-  {
-    icon: Mic2,
-    title: "Former Debate Speaker",
-    description:
-      "Was 2nd speaker on my college debate team. Still argue my case, just in commit messages and PR reviews now.",
-  },
-  {
-    icon: Languages,
-    title: "Learning German, French & Japanese",
-    description: "Picking up three new languages at once, one grammar rule at a time.",
-  },
-];
-
-export const stats: Stat[] = [
-  { label: "Projects Shipped", value: 5, suffix: "" },
-  { label: "Years Coding", value: 2, suffix: "+" },
-  { label: "Hackathon Awards", value: 1, suffix: "" },
-  { label: "Public Repos", value: 7, suffix: "" },
-];
-
-export const timeline: TimelineEntry[] = [
-  {
-    year: "2024",
-    title: "Started Building",
-    description: "Started writing code seriously and shipping my first real projects.",
-  },
-  {
-    year: "2025",
-    title: "Hackathon Win",
-    description:
-      "Wastopia won \"Best Emerging Team – Blockchain Category\" at UIU CSE FEST 2025.",
-  },
-  {
-    year: "2026",
-    title: "Today",
-    description:
-      "Studying CSE at UIU, building full-stack platforms, and exploring machine learning.",
-  },
+// Fun facts: the ONLY place chess, debate and language learning appear on the site.
+export const funFacts = [
+  { title: "I play competitive chess", body: "Thinking a few moves ahead, on the board and in code." },
+  { title: "I was 2nd speaker on my college debate team", body: "I still argue my case, now in commit messages and pull request reviews." },
+  { title: "I'm learning languages", body: "German and Japanese at an elementary level so far, and French on the side." },
+  { title: "I'm learning machine learning", body: "Starting with the fundamentals." },
 ];

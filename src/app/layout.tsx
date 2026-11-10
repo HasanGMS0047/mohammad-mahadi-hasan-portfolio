@@ -1,84 +1,42 @@
-import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Syne, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { LoadingScreen } from "@/components/loading-screen";
-import { siteConfig } from "@/lib/data";
+import { site } from "@/lib/data";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const siteUrl = "https://mohammad-mahadi-hasan-portfolio.vercel.app";
+// Dark & cinematic: Syne for the big display type, Manrope for reading, JetBrains Mono for labels.
+const display = Syne({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-display", display: "swap" });
+const body = Manrope({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: `${siteConfig.name} — ${siteConfig.title}`,
-    template: `%s — ${siteConfig.name}`,
-  },
-  description: siteConfig.tagline,
-  keywords: [
-    "Full-Stack Developer",
-    "Computer Science Student",
-    "React",
-    "Next.js",
-    "Blockchain",
-    "Portfolio",
-    siteConfig.name,
-  ],
-  authors: [{ name: siteConfig.name }],
-  creator: siteConfig.name,
+  metadataBase: new URL(site.url),
+  title: site.title,
+  description: site.description,
+  authors: [{ name: site.name }],
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: siteUrl,
-    title: `${siteConfig.name} — ${siteConfig.title}`,
-    description: siteConfig.tagline,
-    siteName: siteConfig.name,
-    images: [{ url: "/images/profile.jpg", width: 1200, height: 1200, alt: siteConfig.name }],
+    url: site.url,
+    title: site.title,
+    description: site.description,
+    siteName: site.name,
+    images: [{ url: "/share.jpg", width: 1440, height: 900, alt: site.name }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: `${siteConfig.name} — ${siteConfig.title}`,
-    description: siteConfig.tagline,
-    images: ["/images/profile.jpg"],
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  twitter: { card: "summary_large_image", title: site.title, description: site.description, images: ["/share.jpg"] },
+  icons: { icon: "/assets/logo-96.png" },
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0a0a0b",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={archivo.variable} suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col font-sans antialiased selection:bg-red selection:text-white">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[999] focus:border-2 focus:border-ink focus:bg-red focus:px-5 focus:py-2.5 focus:text-white"
-          >
-            Skip to content
-          </a>
-          <LoadingScreen />
-          <Navbar />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
-      </body>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
