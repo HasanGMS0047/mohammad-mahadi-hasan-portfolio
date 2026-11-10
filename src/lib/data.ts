@@ -104,9 +104,9 @@ export const tools: Tool[] = [
 export const uiu = {
   lead: "I'm in the 3rd year (7th trimester) of a BSc in Computer Science and Engineering at United International University. Since September 2026 I've also been a logistics intern at Eventors BD, helping with event planning, coordination and getting things ready. Right now I'm learning the basics of machine learning and getting more comfortable with programming by building small projects.",
   rows: [
-    { name: "BSc in Computer Science and Engineering, UIU", value: "2024 to 2028 (expected)" },
+    { name: "BSc in Computer Science and Engineering, UIU", value: "2024 to 2028" },
     { name: "Logistics Intern, Eventors BD", value: "Sep 2026 to present" },
-    { name: "Best Emerging Team, Blockchain, UIU CSE FEST 2025", value: "Jan 2025, with Team Se7en" },
+    { name: "Best Emerging Team, UIU CSE FEST (with Team Se7en)", value: "Jan 2025" },
     { name: "HSC (Science), Sena Public School and College", value: "2023" },
   ],
 };

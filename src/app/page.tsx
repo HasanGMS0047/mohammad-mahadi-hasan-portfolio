@@ -11,7 +11,6 @@ import { ContactForm } from "@/components/contact-form";
 const live = projects.filter((p) => p.image);
 const codeOnly = projects.filter((p) => !p.image);
 const ticker = ["Next.js", "React", "TypeScript", "Node.js", "Python", "Java", "PHP", "PostgreSQL", "Supabase", "Prisma", "Tailwind CSS", "Git", "Hyperledger Fabric"];
-const inverted = new Set(["nextjs.svg", "github.svg", "vercel.svg", "prisma.svg"]);
 
 const Arrow = () => (
   <span className="btn__arrow" aria-hidden="true">
@@ -88,8 +87,8 @@ export default function Home() {
                   <dd>27</dd>
                 </div>
                 <div>
-                  <dt>CSE FEST 2025</dt>
-                  <dd>Award</dd>
+                  <dt>Year at UIU</dt>
+                  <dd>3rd</dd>
                 </div>
               </dl>
             </div>
@@ -110,7 +109,7 @@ export default function Home() {
                 />
               </div>
               <figcaption className="portrait__tag">
-                <span className="dot" aria-hidden="true" /> Best Emerging Team · UIU CSE FEST 2025
+                <span className="dot" aria-hidden="true" /> CSE student · UIU, Dhaka
               </figcaption>
             </figure>
           </div>
@@ -193,35 +192,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AWARD BAND */}
-        <section className="award" aria-labelledby="award-h">
-          <img
-            className="award__bg"
-            src="/images/work/team-se7en-1600.webp"
-            srcSet="/images/work/team-se7en-900.webp 900w, /images/work/team-se7en-1600.webp 1600w"
-            sizes="100vw"
-            alt="The five members of Team Se7en under the Wastopia logo"
-            width={1600}
-            height={900}
-            loading="lazy"
-          />
-          <div className="wrap award__inner" data-reveal="">
-            <p className="eyebrow">(02) Recognition</p>
-            <h2 id="award-h">
-              Best Emerging Team<em>.</em>
-            </h2>
-            <p>
-              Blockchain category, UIU CSE FEST 2025. Won with my team, Team Se7en, for Wastopia, a waste-tracking idea
-              using a blockchain and IoT smart bins.
-            </p>
-          </div>
-        </section>
-
         {/* STACK */}
         <section className="section" id="stack" aria-labelledby="stack-h">
           <div className="wrap">
             <header className="section__head" data-reveal="">
-              <p className="eyebrow">(03) Learning</p>
+              <p className="eyebrow">(02) Learning</p>
               <h2 id="stack-h">
                 What I&apos;m <em>learning with.</em>
               </h2>
@@ -231,7 +206,6 @@ export default function Home() {
                 <li key={t.name} data-reveal="" style={{ ["--d" as string]: `${(i % 4) * 60}ms` }}>
                   <span className="stack__icon">
                     <img
-                      className={inverted.has(t.icon) ? "invert" : undefined}
                       src={`/assets/icons/${t.icon}`}
                       alt=""
                       width={t.w}
@@ -251,7 +225,7 @@ export default function Home() {
         <section className="section section--alt" id="about" aria-labelledby="about-h">
           <div className="wrap about">
             <div data-reveal="">
-              <p className="eyebrow">(04) About</p>
+              <p className="eyebrow">(03) About</p>
               <h2 id="about-h">
                 Student by day,
                 <br />
@@ -296,7 +270,7 @@ export default function Home() {
         <section className="section contact" id="contact" aria-labelledby="contact-h">
           <div className="wrap contact__grid">
             <div data-reveal="">
-              <p className="eyebrow">(05) Contact</p>
+              <p className="eyebrow">(04) Contact</p>
               <h2 id="contact-h" className="contact__title">
                 Say<br />
                 hello<em>.</em>
